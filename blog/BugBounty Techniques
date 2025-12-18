@@ -1,1 +1,9 @@
-
+Insecure Direct Object Reference (IDOR): The most common "low-hanging" but high-impact bug. Simply change a resource ID in a URL or request (e.g., changing user_id=123 to user_id=124) to see if you can access another user's data.
+Information Leakage: Scrutinize publicly accessible files like robots.txt, .git/ directories, .env files, or configuration backups (e.g., config.php.bak).
+Broken Authentication & Session Management:
+  Test if a session remains active after a password change in a different browser.
+  Check for password reset token reuse (using the same link twice to change a password).
+  Verify if administrative panels are accessible with default credentials like admin:admin.
+Misconfigured Cloud Storage: Search for open Amazon S3 buckets or unprotected Firebase databases using tools like Shodan.
+Simple XSS & Open Redirects: Test input fields and URL parameters for reflected Cross-Site Scripting (XSS) or redirections to malicious external sites. 
+ 
